@@ -5,8 +5,10 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,7 +45,22 @@ public class CandidateListServlet extends HttpServlet {
 		out.println("<title>Login Error</title>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<h3>Online Voting</h3>");
+		String userName = "";
+		Cookie[] arr = req.getCookies();
+
+		if (arr != null) {
+			for (Cookie c : arr) {
+				if (c.getName().equals("uname")) {
+					userName = c.getValue();
+					break;
+				}
+			}
+		}
+		out.printf("Hello %s \n <br/>", userName);
+		ServletContext ctx = this.getServletContext();
+		String message = (String) ctx.getAttribute("announcement");
+		if(message != null)
+		out.printf("Announcement: %s<br/><br/>\n", message);
 		out.println("<form method='post' action='vote'>");
 		for (Candidate c : list) {
 			out.printf("<input type='radio' name='candidate' value='%d'/> %s (%s)<br/>\n", c.getId(), c.getName(),

@@ -47,7 +47,7 @@
 		<servlet-name>Logout</servlet-name>
 		<url-pattern>/logout</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>ResultList</servlet-name>
 		<servlet-class>com.sunbeam.servlets.ResultListServlet</servlet-class>
@@ -56,7 +56,7 @@
 		<servlet-name>ResultList</servlet-name>
 		<url-pattern>/reslist</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>Registration</servlet-name>
 		<servlet-class>com.sunbeam.servlets.RegistrationServlet</servlet-class>
@@ -65,4 +65,44 @@
 		<servlet-name>Registration</servlet-name>
 		<url-pattern>/registration</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteCand</servlet-name>
+		<servlet-class>com.sunbeam.servlets.DeleteCandidateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteCand</servlet-name>
+		<url-pattern>/delcand</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EditCand</servlet-name>
+		<servlet-class>com.sunbeam.servlets.EditCandidateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditCand</servlet-name>
+		<url-pattern>/editcand</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Announcement</servlet-name>
+		<servlet-class>com.sunbeam.servlets.AnnouncementServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Announcement</servlet-name>
+		<url-pattern>/announce</url-pattern>
+	</servlet-mapping>
+	
+	<context-param>
+		<param-name>AppTitle</param-name>
+		<param-value>Online Voting</param-value>
+	</context-param>
+	
+	<session-config>
+		<session-timeout>5</session-timeout>
+		<cookie-config>
+			<name>SID</name>
+		</cookie-config>
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
 </web-app>

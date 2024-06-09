@@ -49,10 +49,10 @@ public class RegistrationServlet extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title>Logout</title>");
+		out.println("<title>Registration</title>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("Thank you for saving democracy. <br/><br/>");
+		out.println("Successfully Registered. <br/><br/>");
 		out.println("<a href='index.html'>Login Again</a>");
 		out.println("</body>");
 		out.println("</html>");

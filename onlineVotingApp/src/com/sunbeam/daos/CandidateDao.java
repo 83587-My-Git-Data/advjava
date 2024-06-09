@@ -18,4 +18,6 @@ public interface CandidateDao extends AutoCloseable {
 	int update(Candidate c) throws Exception;
 
 	List<Candidate> getCandidatewiseVotes() throws Exception;
+
+	Candidate findById(int id) throws Exception;
 }
